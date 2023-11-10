@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-image: url('assets/images/maxresdefault.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.error {
+    color: red !important;
+    background-color: aqua;
+    width: fit-content;
+    border-radius: 10%;
+    margin: auto;
+}

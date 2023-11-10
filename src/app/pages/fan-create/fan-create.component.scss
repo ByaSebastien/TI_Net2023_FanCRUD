@@ -1,0 +1,26 @@
+.fanForm {
+    width: fit-content;
+    padding: 50px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 0, 255, 0.474);
+    border-radius: 50%;
+    color: aqua;
+
+    input {
+        margin: 10px;
+    }
+
+    button {
+        margin: 5px;
+        background-color: aqua;
+        border-radius: 35%;
+        transition: 0.3s;
+        color: magenta;
+    }
+
+    button:hover {
+        transform: scale(1.2);
+    }
+}

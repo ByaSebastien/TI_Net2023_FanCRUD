@@ -1,0 +1,13 @@
+<ul class="fanList">
+    <li *ngFor="let fan of fans;let id = index">
+        <div class="fanCard">
+            <h2>{{fan.name}}</h2>
+            <h3>{{fan.birthdate | date: 'dd-MM-yyyy'}}</h3>
+            <p>Nombre de série : {{fan.series.length}}</p>
+            <div class="buttons">
+                <button [routerLink]="'/detail/'+id">Detail</button>
+                <button [routerLink]="'/update/'+id">Update</button>
+            </div>
+        </div>
+    </li>
+</ul>

@@ -1,0 +1,23 @@
+<form [formGroup]="fg" class="fanForm" (submit)="onSubmit()">
+    <label for="fn">Name : </label>
+    <input type="text" id="fn" formControlName="name">
+    <p class="error" *ngIf="fg.get('name')?.dirty &&
+    fg.get('name')?.errors?.['required']">Champ requis</p>
+
+    <label for="bd">Birthdate : </label>
+    <input type="date" id="bd" formControlName="birthdate">
+    <p class="error" *ngIf="fg.get('birthdate')?.dirty &&
+    fg.get('birthdate')?.errors?.['tooYoung']">Too young</p>
+
+    <div formArrayName="series">
+        <div *ngFor="let seriesControl of formArray.controls; let i = index">
+            <label [for]="i">Série {{ i + 1 }}:</label>
+            <input [formControlName]="i" [id]="i" />
+            <button type="button" (click)="removeSerie(i)">❌</button>
+            <p class="error" *ngIf="seriesControl.touched &&
+    seriesControl?.errors?.['required']">Champ requis</p>
+        </div>
+    </div>
+    <button type="button" (click)="addSerie()">Ajouter série</button>
+    <button>Ajouter</button>
+</form>
